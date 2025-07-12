@@ -85,38 +85,66 @@
         #endregion
 
         #region  Q-4
-        static bool IsPrime(int num)
-        {
-            if (num <= 1) return false;
-            for (int i = 2; i <= Math.Sqrt(num); i++)
-                if (num % i == 0) return false;
-            return true;
-        }
+        //        static bool IsPrime(int num)
+        //        {
+        //            if (num <= 1) return false;
+        //            for (int i = 2; i <= Math.Sqrt(num); i++)
+        //                if (num % i == 0) return false;
+        //            return true;
+        //        }
 
+        //        static void Main()
+        //        {
+        //            Console.Write("Enter how many numbers: ");
+        //            int size = int.Parse(Console.ReadLine());
+
+        //            int[] arr = new int[size];
+
+        //            Console.WriteLine("Enter the numbers:");
+        //            for (int i = 0; i < size; i++)
+        //                arr[i] = int.Parse(Console.ReadLine());
+
+        //            int count = 0;
+        //            foreach (var num in arr)
+        //            {
+        //                if (IsPrime(num))
+        //                    count++;
+        //            }
+
+        //            Console.WriteLine($"Prime numbers count: {count}");
+        //        }
+        //    }
+        //}
+        #endregion
+        #region  Q-5
         static void Main()
         {
-            Console.Write("Enter how many numbers: ");
-            int size = int.Parse(Console.ReadLine());
+            int[] numbers = new int[10];
 
-            int[] arr = new int[size];
-
-            Console.WriteLine("Enter the numbers:");
-            for (int i = 0; i < size; i++)
-                arr[i] = int.Parse(Console.ReadLine());
-
-            int count = 0;
-            foreach (var num in arr)
+            Console.WriteLine("Enter 10 numbers:");
+            for (int i = 0; i < 10; i++)
             {
-                if (IsPrime(num))
-                    count++;
+                Console.Write($"Number {i + 1}: ");
+                numbers[i] = int.Parse(Console.ReadLine());
             }
 
-            Console.WriteLine($"Prime numbers count: {count}");
+            int max = numbers[0];
+            int index = 0;
+
+            for (int i = 1; i < numbers.Length; i++)
+            {
+                if (numbers[i] > max)
+                {
+                    max = numbers[i];
+                    index = i;
+                }
+            }
+
+            Console.WriteLine($"Max value is {max} at index {index}");
         }
     }
 }
 #endregion
-
 
 
 
