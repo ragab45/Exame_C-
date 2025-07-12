@@ -117,30 +117,54 @@
         //}
         #endregion
         #region  Q-5
+        //        static void Main()
+        //        {
+        //            int[] numbers = new int[10];
+
+        //            Console.WriteLine("Enter 10 numbers:");
+        //            for (int i = 0; i < 10; i++)
+        //            {
+        //                Console.Write($"Number {i + 1}: ");
+        //                numbers[i] = int.Parse(Console.ReadLine());
+        //            }
+
+        //            int max = numbers[0];
+        //            int index = 0;
+
+        //            for (int i = 1; i < numbers.Length; i++)
+        //            {
+        //                if (numbers[i] > max)
+        //                {
+        //                    max = numbers[i];
+        //                    index = i;
+        //                }
+        //            }
+
+        //            Console.WriteLine($"Max value is {max} at index {index}");
+        //        }
+        //    }
+        //}
+
+        #endregion
+        #region  Q-6
+        static bool IsPalindrome(string word)
+        {
+            string lower = word.ToLower();
+            char[] reversed = lower.ToCharArray();
+            Array.Reverse(reversed);
+
+            return lower == new string(reversed);
+        }
+
         static void Main()
         {
-            int[] numbers = new int[10];
+            Console.Write("Enter a word: ");
+            string input = Console.ReadLine();
 
-            Console.WriteLine("Enter 10 numbers:");
-            for (int i = 0; i < 10; i++)
-            {
-                Console.Write($"Number {i + 1}: ");
-                numbers[i] = int.Parse(Console.ReadLine());
-            }
-
-            int max = numbers[0];
-            int index = 0;
-
-            for (int i = 1; i < numbers.Length; i++)
-            {
-                if (numbers[i] > max)
-                {
-                    max = numbers[i];
-                    index = i;
-                }
-            }
-
-            Console.WriteLine($"Max value is {max} at index {index}");
+            if (IsPalindrome(input))
+                Console.WriteLine("The word is a palindrome.");
+            else
+                Console.WriteLine("The word is not a palindrome.");
         }
     }
 }
