@@ -59,26 +59,59 @@
         #endregion
         #region  Q-3
 
-       
-        static void printMultiplicationTable(int number)
+
+        //        static void printMultiplicationTable(int number)
+        //        {
+        //            for (int i = 1; i <= 10; i++)
+        //            {
+        //                Console.WriteLine($"Table {i}");
+        //                for (int j = 1; j <= 10; j++)
+        //                {
+        //                    Console.WriteLine($"{i} x {j} = {i * j}");
+        //                }
+        //                Console.WriteLine();
+        //            }
+
+        //        }
+        //        static void Main(string[] args)
+        //        {
+
+        //            Console.Write("Enter the number of tables: ");
+        //            int n = int.Parse(Console.ReadLine());
+        //            printMultiplicationTable(n);
+        //        }
+        //    }
+        //}
+        #endregion
+
+        #region  Q-4
+        static bool IsPrime(int num)
         {
-            for (int i = 1; i <= 10; i++)
+            if (num <= 1) return false;
+            for (int i = 2; i <= Math.Sqrt(num); i++)
+                if (num % i == 0) return false;
+            return true;
+        }
+
+        static void Main()
+        {
+            Console.Write("Enter how many numbers: ");
+            int size = int.Parse(Console.ReadLine());
+
+            int[] arr = new int[size];
+
+            Console.WriteLine("Enter the numbers:");
+            for (int i = 0; i < size; i++)
+                arr[i] = int.Parse(Console.ReadLine());
+
+            int count = 0;
+            foreach (var num in arr)
             {
-                Console.WriteLine($"Table {i}");
-                for (int j = 1; j <= 10; j++)
-                {
-                    Console.WriteLine($"{i} x {j} = {i * j}");
-                }
-                Console.WriteLine();
+                if (IsPrime(num))
+                    count++;
             }
 
-        }
-        static void Main(string[] args)
-        {
-
-            Console.Write("Enter the number of tables: ");
-            int n = int.Parse(Console.ReadLine());
-            printMultiplicationTable(n);
+            Console.WriteLine($"Prime numbers count: {count}");
         }
     }
 }
