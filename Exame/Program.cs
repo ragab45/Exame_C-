@@ -2,7 +2,7 @@
 {
     internal class Program
     {
-        public static void Main(string[] args) { }
+
         #region Q-1
         //Console.WriteLine("Enter your age");
         //String outage = (Console.ReadLine());
@@ -24,40 +24,65 @@
         //}
         #endregion
         #region  Q-2
-        static double? Calculator(double num1, double num2, char operation)
+        //    static double? Calculator(double num1, double num2, char operation)
+        //    {
+        //        switch (operation)
+        //        {
+        //            case '+': return num1 + num2;
+        //            case '-': return num1 - num2;
+        //            case '*': return num1 * num2;
+        //            case '/': return num2 != 0 ? num1 / num2 : null;
+        //            default: return null;
+        //        }
+        //    }
+
+        //    static void Main()
+        //    {
+        //        Console.Write("Enter the first number: ");
+        //        double n1 = double.Parse(Console.ReadLine());
+
+        //        Console.Write("Enter the second number: ");
+        //        double n2 = double.Parse(Console.ReadLine());
+
+        //        Console.Write("Enter the operator (+ - * /): ");
+        //        char operation = Console.ReadKey().KeyChar;
+        //        Console.WriteLine();
+
+        //        var result = Calculator(n1, n2, operation);
+        //        if (result.HasValue)
+        //            Console.WriteLine($"Result: {result}");
+        //        else
+        //            Console.WriteLine("Invalid operation or division by zero.");
+        //    }
+        //}
+
+        #endregion
+        static void printMultiplicationTable(int number)
         {
-            switch (operation)
+            for (int i = 1; i <= 10; i++)
             {
-                case '+': return num1 + num2;
-                case '-': return num1 - num2;
-                case '*': return num1 * num2;
-                case '/': return num2 != 0 ? num1 / num2 : null;
-                default: return null;
+                Console.WriteLine($"Table {i}");
+                for (int j = 1; j <= 10; j++)
+                {
+                    Console.WriteLine($"{i} x {j} = {i * j}");
+                }
+                Console.WriteLine();
             }
+
         }
-
-        static void Main()
+        static void Main(string[] args)
         {
-            Console.Write("Enter the first number: ");
-            double n1 = double.Parse(Console.ReadLine());
 
-            Console.Write("Enter the second number: ");
-            double n2 = double.Parse(Console.ReadLine());
-
-            Console.Write("Enter the operator (+ - * /): ");
-            char operation = Console.ReadKey().KeyChar;
-            Console.WriteLine();
-
-            var result = Calculator(n1, n2, operation);
-            if (result.HasValue)
-                Console.WriteLine($"Result: {result}");
-            else
-                Console.WriteLine("Invalid operation or division by zero.");
+            Console.Write("Enter the number of tables: ");
+            int n = int.Parse(Console.ReadLine());
+            printMultiplicationTable(n);
         }
     }
-
-    #endregion
 }
+        
+
+
+        
     
 
 
