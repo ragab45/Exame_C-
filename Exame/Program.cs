@@ -57,6 +57,9 @@
         //}
 
         #endregion
+        #region  Q-3
+
+       
         static void printMultiplicationTable(int number)
         {
             for (int i = 1; i <= 10; i++)
@@ -79,10 +82,11 @@
         }
     }
 }
-        
+#endregion
 
 
-        
-    
+
+
+
 
 
