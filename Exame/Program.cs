@@ -194,21 +194,45 @@
         //}
         #endregion
         #region  Q-8
-        static int SumEven(int[] arr)
-        {
-            int sum = 0;
-            foreach (int num in arr)
-            {
-                if (num % 2 == 0)
-                    sum += num;
-            }
-            return sum;
-        }
+        //        static int SumEven(int[] arr)
+        //        {
+        //            int sum = 0;
+        //            foreach (int num in arr)
+        //            {
+        //                if (num % 2 == 0)
+        //                    sum += num;
+        //            }
+        //            return sum;
+        //        }
 
+        //        static void Main()
+        //        {
+        //            int[] numbers = { 1, 2, 3, 4, 5, 6 };
+        //            Console.WriteLine("Sum of even numbers: " + SumEven(numbers));
+        //        }
+        //    }
+        //}
+        #endregion
+        #region  Q-9
         static void Main()
         {
-            int[] numbers = { 1, 2, 3, 4, 5, 6 };
-            Console.WriteLine("Sum of even numbers: " + SumEven(numbers));
+            for (int i = 1; i <= 5; i++)
+            {
+                Console.Write($"Enter score for student {i}: ");
+                int score = int.Parse(Console.ReadLine());
+
+                string grade = score switch
+                {
+                    >= 90 => "A",
+                    >= 80 => "B",
+                    >= 70 => "C",
+                    >= 60 => "D",
+                    < 60 => "F",
+                    _ => "invalid"
+                };
+
+                Console.WriteLine("Grade: " + grade);
+            }
         }
     }
 }
