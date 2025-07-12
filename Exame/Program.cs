@@ -147,24 +147,48 @@
 
         #endregion
         #region  Q-6
-        static bool IsPalindrome(string word)
-        {
-            string lower = word.ToLower();
-            char[] reversed = lower.ToCharArray();
-            Array.Reverse(reversed);
+        //        static bool IsPalindrome(string word)
+        //        {
+        //            string lower = word.ToLower();
+        //            char[] reversed = lower.ToCharArray();
+        //            Array.Reverse(reversed);
 
-            return lower == new string(reversed);
+        //            return lower == new string(reversed);
+        //        }
+
+        //        static void Main()
+        //        {
+        //            Console.Write("Enter a word: ");
+        //            string input = Console.ReadLine();
+
+        //            if (IsPalindrome(input))
+        //                Console.WriteLine("The word is a palindrome.");
+        //            else
+        //                Console.WriteLine("The word is not a palindrome.");
+        //        }
+        //    }
+        //}
+        #endregion
+        #region  Q-7
+        static double? Divide(int? a, int? b)
+        {
+            if (a.HasValue && b.HasValue && b != 0)
+                return (double)a / b;
+            else
+                return null;
         }
 
         static void Main()
         {
-            Console.Write("Enter a word: ");
-            string input = Console.ReadLine();
+            int? num1 = 10;
+            int? num2 = 2;
 
-            if (IsPalindrome(input))
-                Console.WriteLine("The word is a palindrome.");
+            var result = Divide(num1, num2);
+
+            if (result != null)
+                Console.WriteLine("Result: " + result);
             else
-                Console.WriteLine("The word is not a palindrome.");
+                Console.WriteLine("Can't divide.");
         }
     }
 }
