@@ -170,30 +170,49 @@
         //}
         #endregion
         #region  Q-7
-        static double? Divide(int? a, int? b)
+        //        static double? Divide(int? a, int? b)
+        //        {
+        //            if (a.HasValue && b.HasValue && b != 0)
+        //                return (double)a / b;
+        //            else
+        //                return null;
+        //        }
+
+        //        static void Main()
+        //        {
+        //            int? num1 = 10;
+        //            int? num2 = 2;
+
+        //            var result = Divide(num1, num2);
+
+        //            if (result != null)
+        //                Console.WriteLine("Result: " + result);
+        //            else
+        //                Console.WriteLine("Can't divide.");
+        //        }
+        //    }
+        //}
+        #endregion
+        #region  Q-8
+        static int SumEven(int[] arr)
         {
-            if (a.HasValue && b.HasValue && b != 0)
-                return (double)a / b;
-            else
-                return null;
+            int sum = 0;
+            foreach (int num in arr)
+            {
+                if (num % 2 == 0)
+                    sum += num;
+            }
+            return sum;
         }
 
         static void Main()
         {
-            int? num1 = 10;
-            int? num2 = 2;
-
-            var result = Divide(num1, num2);
-
-            if (result != null)
-                Console.WriteLine("Result: " + result);
-            else
-                Console.WriteLine("Can't divide.");
+            int[] numbers = { 1, 2, 3, 4, 5, 6 };
+            Console.WriteLine("Sum of even numbers: " + SumEven(numbers));
         }
     }
 }
 #endregion
-
 
 
 
